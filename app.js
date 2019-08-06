@@ -37,7 +37,7 @@ function buildTable(bookList) {
     table.appendChild(headRow); 
      
     // above creates the table header row with property names 
-    //below creates rows with table cells filled with each objects['index'] a.k.a propery accessor 
+    //below creates rows with table cells filled with each objects['index'] a.k.a property accessor 
     /* Properties of JavaScript objects can also be accessed or set using a 
     bracket notation this is  why  objects are sometimes called associative arrays*/ 
     
@@ -100,25 +100,25 @@ add for loop! WORKS!!
 */
 function addRow() { 
     for(let i = 0; i < myLibrary.length; i++) {
-myLibrary = myLibrary.filter(x => x !== myLibrary[i]);  
-myLibrary.forEach(object => {
-        let row = document.createElement('tr');
-        Object.keys(myLibrary[0]).forEach(key => {
-            let cell = document.createElement('td'); 
-            cell.textContent = object[key]; 
-            if (typeof object[key] == "number") {
-                cell.style.textAlign = "right"; 
-            }
-            else {
-                cell.style.textAlign= 'center'; 
-            }
-            cell.className = 'table-content'; 
-            row.appendChild(cell);
-            
+        myLibrary = myLibrary.filter(x => x !== myLibrary[i]);  
+        myLibrary.forEach(object => {
+            let row = document.createElement('tr');
+            Object.keys(myLibrary[0]).forEach(key => {
+                let cell = document.createElement('td'); 
+                cell.textContent = object[key]; 
+                if (typeof object[key] == "number") {
+                    cell.style.textAlign = "right"; 
+                }
+                else {
+                    cell.style.textAlign= 'center'; 
+                }
+                cell.className = 'table-content'; 
+                row.appendChild(cell);
+                
+            })
+            tableBuilt.appendChild(row); 
+        
         })
-        tableBuilt.appendChild(row); 
-    
-    })
     }
 } 
 
