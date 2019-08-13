@@ -35,7 +35,7 @@ function buildTable(bookList) {
         headCells.className = 'row'; 
     });
     table.appendChild(headRow); 
-     
+
     // above creates the table header row with property names 
     //below creates rows with table cells filled with each objects['index'] a.k.a property accessor 
     /* Properties of JavaScript objects can also be accessed or set using a 
@@ -53,11 +53,11 @@ function buildTable(bookList) {
                 cell.style.textAlign= 'center'; 
             }
             cell.className = 'table-content'; 
-            row.appendChild(cell);
-            
+            row.appendChild(cell);          
         })
+
         table.appendChild(row); 
-    
+        
     })
 
     return table; 
@@ -84,18 +84,17 @@ function newBook() {
         inputBookPages.value,
         inputBookRead.value
     );
-    
 
     addBookToLibrary(item); 
     console.log(item); 
     addRow(); 
     showForm();
-    clearFields();  
+    clearFields();
+    
 }
 
-
-/* below function only works for the first addition. need to make it 
-work for every addition and check to see if it inside library 
+/* Original problem: below function only worked for the first addition. needed to make it 
+work for every addition and check to see if it's inside library, 
 add for loop! WORKS!! 
 */
 function addRow() { 
@@ -113,8 +112,7 @@ function addRow() {
                     cell.style.textAlign= 'center'; 
                 }
                 cell.className = 'table-content'; 
-                row.appendChild(cell);
-                
+                row.appendChild(cell);      
             })
             tableBuilt.appendChild(row); 
         
