@@ -39,10 +39,13 @@ function buildTable(bookList) {
     bookList.forEach(function addBookToTable(book, index) { 
         let row = document.createElement('tr');
         row.setAttribute("data-index", index);
-        console.log(row);
+        //console.log(row);
         Object.keys(book).forEach(key => {
             let cell = document.createElement('td'); 
-            cell.textContent = book[key]; 
+            cell.textContent = book[key];
+            if (key == 'read') {
+                cell.innerHTML = `<button class = "toggle-read" onclick = "toggleRead(this)">${book[key]}</button>`;
+            }
             if (typeof book[key] == "number") {
                 cell.style.textAlign = "right"; 
             }
@@ -113,4 +116,15 @@ function deleteBook(book) {
     buildTable(myLibrary);  
     
 } 
+function toggleRead(button) {
+    if(button.innerHTML == "read"){
+        //button.innerHTML =="not read";
+        myLibrary[button.parentNode.parentNode.dataset.index].read ="not read"; 
+    } else {
+        //button.innerHTML =="read";
+        myLibrary[button.parentNode.parentNode.dataset.index].read ="read"; 
+
+    }
+    buildTable(myLibrary); 
+}
 buildTable(myLibrary); 

@@ -94,3 +94,13 @@ form {
     box-shadow: 0 0 4px black; 
     color: white; 
 }
+
+.toggle-read {
+    height: 35px;
+    width: 70px; 
+    border-radius: 10px; 
+    font-size: .8em; 
+}
+.toggle-read:hover {
+    cursor:pointer; 
+}
